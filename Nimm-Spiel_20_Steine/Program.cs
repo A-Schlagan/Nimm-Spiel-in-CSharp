@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Nimm_Spiel_20_Steine
@@ -18,8 +19,9 @@ namespace Nimm_Spiel_20_Steine
             int amZug = rand.Next(2);
 
             Console.WriteLine(amZug == 0 ? "Computer fängt an!" : "Du fängst an!");
+            Thread.Sleep(2000);
 
-            while (gesSteine ==0) 
+            while (gesSteine >0) 
             {
                 if (amZug == 0)
                 {
@@ -32,10 +34,11 @@ namespace Nimm_Spiel_20_Steine
                     }
 
                     Console.WriteLine("Computer nimmt " + nehmen + " Steine.");
-                   
+                    Thread.Sleep(2000);
+
                     gesSteine -= nehmen;
 
-                    if (gesSteine ==0)
+                    if (gesSteine <1)
                     {
                         Console.WriteLine("********Computer hat verloren!!!********");
                     }
@@ -43,6 +46,7 @@ namespace Nimm_Spiel_20_Steine
                     {
                         Console.WriteLine("Auf dem Tisch bleiben " + gesSteine + " Steine");
                         Console.WriteLine(new String('o', gesSteine));
+                        Thread.Sleep(2000);
                     }
 
 
