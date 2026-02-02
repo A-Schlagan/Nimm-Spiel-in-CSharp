@@ -71,7 +71,7 @@ namespace Nimm_Spiel_20_Steine
                 }
                 
                 amZug = 1-amZug;
-               
+                 
 
                  
             }
